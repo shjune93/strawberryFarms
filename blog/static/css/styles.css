@@ -1,0 +1,126 @@
+:root{/*나중에 많아졌을때 한번에 바꾸기 좋음*/
+    --text-color:#f0f4f5;
+    --background-color:#1987cf;
+    --accent-color:#e71f11;
+}
+
+body{
+    margin:0;/*원하지않는 마진 제거*/
+    font-family: 'Langar';
+    font-size:25px;
+}
+
+a{
+    text-decoration: none;/*밑줄제거*/
+    color:var(--text-color);
+    font-size:30px;
+}
+
+p{
+    word-break:break-all;
+    text-overflow: ellipsis;
+}
+.navbar{/*최상위부터 꾸며야됨*/
+    display: flex;/*한줄에 나란히 들어오도록*/
+    justify-content: space-between;/*중간중간에 띄워줌*/
+    align-items: center;/*반대축이기때문에 align*/
+    background-color: var(--background-color);
+    padding:8px 12px;/*너무 양옆에 붙어잇어서*/
+}
+
+
+.navbar__logo{
+    font-size:24;
+    color:var(--text-color);
+}
+
+.navbar__logo i{
+    color:var(--accent-color);
+}
+
+.navbar__menu{
+    display: flex;/*한줄로*/
+    list-style: none;/*리스트 점 제거*/
+    padding-left: 0;/*중간으로*/
+}
+
+.navbar__menu li{
+    padding:8px 30px;/*마진은 마우스 클릭범위가 좁아지고 padding은 넒어짐*/
+}
+
+.navbar__menu li:hover{/*마우스 닿았을때*/
+    background-color: orange;
+    border-radius: 4px;/*조금 둥글게*/
+}
+
+.navbar__icons{
+    list-style: none;
+    color:var(--text-color);
+    display: flex;
+    padding-left: 0;/*중간으로*/
+}
+
+.navbar__icons li{
+    padding:8px 12px;
+}
+
+.navbar__toogleBtn{
+    display:none;/*화면클때는 안나오게*/
+    position:absolute;
+    right:32px;
+    font-size: 40px;
+    color:var(--accent-color);
+}
+
+.fa-plus{
+    color:#123456;
+    float:right;
+    font-size:50px;
+}
+.fa-edit{
+    color:#123456;
+    float:right;
+    font-size:50px;
+}
+
+.fa-save {
+    float: right;
+    font-size:50px;
+    background:white;
+}
+
+@media screen and (max-width:768px){/*화면이작아져서 배치가 깨질때*/
+    .navbar{/*작아지면 열로세움*/
+        flex-direction:column;
+        align-items: flex-start;/*좌로붙이기*/
+        padding:8px 24px;
+    }
+
+    .navbar__menu{/*메뉴도 다 하나하나씩 떨어지게*/
+        display:none;
+        flex-direction: column;
+        align-items: center;/*메뉴는 가운데로*/
+        width:100%;/*설정해줘야 적용됨*/
+    }
+
+    .navbar__menu li{
+        width: 100%;
+        text-align: center;
+    }
+
+
+    .navbar__icons{
+        display:none;
+        justify-content:center;
+        width: 100%;
+    }
+
+    .navbar__toogleBtn{
+        display: block;
+    }
+
+    .navbar__menu.active,
+    .navbar__icons.active{/*active되면 보이게*/
+        display:flex;
+    }
+}

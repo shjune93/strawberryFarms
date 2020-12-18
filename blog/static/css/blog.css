@@ -11,7 +11,8 @@
 }
  
 .content {
-    margin-left: 40px;
+    margin-left: 300px;
+    margin-right:300px;
 }
  
 h1, h2, h3, h4 {
@@ -21,11 +22,7 @@ h1, h2, h3, h4 {
 .date {
     color: #828282;
 }
- 
-.save {
-    float: right;
-}
- 
+
 .post-form textarea, .post-form input {
     width: 100%;
 }
