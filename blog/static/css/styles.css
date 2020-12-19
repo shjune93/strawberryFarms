@@ -89,6 +89,32 @@ p{
     background:white;
 }
 
+/*paging*/
+
+.paging{
+    justify-content:center;/*센터로 */
+    display: flex;/*행정렬*/
+    list-style: none;/* 리스트의 .을 제거합니다.*/
+}
+
+.paging li a{
+    color:#111111;/*a 링크 글자는 흰색으로 설정되어 있어서 잘보이게 설정*/
+    padding:10px 10px;/*간격*/
+}
+
+.paging li a:hover{/*마우스가 닿으면*/
+    background-color: orange;/*배경바꾸기*/
+    border-radius: 4px;/*조금 둥글게*/
+}
+
+.page-item.active .page-link {/*현재 페이지 표시*/
+  color: #0000ff;/*현재페이지 파랑색으로 표시*/
+}
+/*end paging*/
+
+
+
+
 @media screen and (max-width:768px){/*화면이작아져서 배치가 깨질때*/
     .navbar{/*작아지면 열로세움*/
         flex-direction:column;

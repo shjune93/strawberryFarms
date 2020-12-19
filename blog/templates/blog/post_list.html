@@ -1,15 +1,50 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    <a href="{% url 'post_new' %}"><i class="fas fa-plus"></i></a>
     {% for post in posts %}
         <div class="post">
             <div class="date">
                 {{ post.published_date }}
             </div>
-
-            <h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <h1><a class="page-link" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+            <!--<p>{{ post.text|linebreaksbr }}</p>-->
         </div>
     {% endfor %}
+
+    <ul class="paging">
+        <!-- 이전페이지 -->
+        {% if posts.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ posts.previous_page_number }}"> << </a>
+        </li>
+        {% endif %}
+        <!--이전페이지가 충분하지 않은경우-->
+        {% if posts.number > page_size|add:"1" %}
+            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+            <li class="page-item"><span class="page-link" >...</span></li>
+        {% endif %}
+        <!-- 페이지리스트 -->
+        {% for page_number in page_range %}
+            {% if page_number == posts.number%}
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+            {% else %}
+            <li class="page-item">
+                <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
+            </li>
+            {% endif %}
+        {% endfor %}
+        <!-- 다음페이지 -->
+        {% if posts.number|add:page_size < max_index %}
+            <li class="page-item"><span class="page-link" >...</span></li>
+            <li class="page-item"><a class="page-link" href="?page={{ max_index }}">{{ max_index }}</a></li>
+        {% endif %}
+
+        {% if posts.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ posts.next_page_number }}"> >> </a>
+        </li>
+        {% endif %}
+    </ul>
 {% endblock %}
