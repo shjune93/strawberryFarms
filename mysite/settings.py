@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+AUTH_USER_MODEL='users.User'
+#로그인 설정
+# LOGIN_URL = '/users/login/' # 기본값
+# LOGOUT_URL = '/users/logout/' # 기본값
+# LOGIN_REDIRECT_URL = '/' # 반드시 정의할 것!

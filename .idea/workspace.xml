@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7331fa68-a52e-4a60-a981-1ae57bea00c1" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/users/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/templates/users/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/static/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/blog/static/css/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/navbar.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/navbar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blog/templates/blog/post_edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/blog/templates/blog/post_edit.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/blog/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,17 +75,23 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2541" y="316" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608294521538">
+    <state x="2541" y="316" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1608734361807">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2541" y="316" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1608294521538" />
-    <state x="2031" y="212" width="1436" height="775" key="dock-window-1" timestamp="1608348829697">
+    <state x="2541" y="316" key="#com.intellij.fileTypes.FileTypeChooser/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1608734361807" />
+    <state x="2547" y="219" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608734219980">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="2547" y="219" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1608734219980" />
+    <state x="1973" y="0" width="1436" height="661" maximized="true" key="dock-window-1" timestamp="1608687407385">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1973" y="0" width="1436" height="661" maximized="true" key="dock-window-1/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1608687407385" />
     <state x="2031" y="212" width="1436" height="775" key="dock-window-1/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1608348829697" />
-    <state x="953" y="0" width="974" height="1047" key="dock-window-2" timestamp="1608382074116">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1920" y="0" width="1436" height="1039" maximized="true" key="dock-window-2" timestamp="1608688067329">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state x="1920" y="0" width="1436" height="1039" maximized="true" key="dock-window-2/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@0.0.1920.1040" timestamp="1608688067329" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-2/-1920.0.1920.1040/1920.0.1920.1080/0.0.1920.1040@1920.0.1920.1080" timestamp="1608382074116" />
   </component>
 </project>

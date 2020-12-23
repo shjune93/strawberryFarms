@@ -12,6 +12,11 @@
         </div>
 
         <div class="navbar__icons">
+            {% if user.is_authenticated %}
+            <li><a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i></a></li>
+            {% else %}
+            <li><a href="{% url 'users:login' %}"><i class="fas fa-sign-in-alt"></i></a></li>
+            {% endif %}
             <li><i class="fab fa-twitter"></i></li>
             <li><i class="fab fa-facebook"></i></li>
         </div>

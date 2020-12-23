@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+ 
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <p>아이디</p>
+    <input name="username" type="text">
+    <p>비밀번호</p>
+    <input name="password" type="password">
+    <p>이름</p>
+    <input name="lastname" type="text">
+    <p>이메일</p>
+    <input name="email" type="text">
+    <p></p>
+    <input type="submit" value="회원가입">
+</form>
+
+{% endblock %}

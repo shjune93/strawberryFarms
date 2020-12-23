@@ -3,13 +3,14 @@
 {% block content %}
     <div class="post">
         <a href ="{% url 'post_edit' pk=post.pk %}"><i class="fas fa-edit"></i></a>
-        {% if post.published_date %}
+
             <div class="date">
                 {{ post.published_date }}
             </div>
-        {% endif %}
+        {{ post.author }}
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
         <h1>{{ post.title }}</h1>
         <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    <a href="/">-목록보기-</a>
 {% endblock %}
