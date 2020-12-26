@@ -3,17 +3,21 @@ from django.utils import timezone
 from .models import Post
 from .forms import PostForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.contrib.auth.decorators import login_required
+
+def home(request):
+    return render(request, 'blog/home.html')
 
 def post_list(request):
     #페이지 받아오기
     page=request.GET.get('page','1')#page의 값을 get방식으로 가져오는데 없을시 디폴트를 '1'로 지정한다.
 
     #조회
-    #posts = Post.objects.order_by('-created_date')
-    posts = Post.objects.all()
+    posts = Post.objects.order_by('-created_date')
+    #posts = Post.objects.all()
 
     #페이징처리
-    paginator=Paginator(posts, 10)
+    paginator=Paginator(posts, 30)
     try:
         posts = paginator.page(page)
     except PageNotAnInteger:#페이지 번호가 없을시
@@ -59,7 +63,7 @@ def post_detail(request, pk):
     post = get_object_or_404(Post, pk=pk)
     return render(request, 'blog/post_detail.html', {'post': post})
 
-
+@login_required(login_url="/users/login")
 def post_new(request):
     if request.method == "POST":
         form = PostForm(request.POST)
@@ -68,12 +72,12 @@ def post_new(request):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post:post_detail', pk=post.pk)
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
 
-
+@login_required(login_url="/users/login")
 def post_edit(request, pk):
     post = get_object_or_404(Post, pk=pk)
     if request.method == "POST":
@@ -83,7 +87,7 @@ def post_edit(request, pk):
             post.author = request.user
             post.published_date = timezone.now()
             post.save()
-            return redirect('post_detail', pk=post.pk)
+            return redirect('post:post_detail', pk=post.pk)
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})

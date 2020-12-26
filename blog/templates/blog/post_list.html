@@ -1,15 +1,40 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <div class="date">
-                {{ post.published_date }}
-            </div>
-            <h1><a class="page-link" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-            <!--<p>{{ post.text|linebreaksbr }}</p>-->
-        </div>
-    {% endfor %}
+
+    <div class="main">
+        <!--추가버튼-->
+    <div class="postnew">
+        <a href="{% url 'post:post_new' %}"><i class="fas fa-plus"></i></a>
+    </div>
+        <table border="1"  align = "center" class="post_table">
+            <colgroup>
+                <col width="5%">
+                <col width="*%">
+                <col width="10%">
+                <col width="15%">
+                <col width="5%">
+                <col width="5%">
+            </colgroup>
+            <tr class="text-center">
+            <th>번호</th>
+            <th>제목</th>
+            <th>글쓴이</th>
+            <th>등록일</th>
+            <th>추천</th>
+            <th>조회</th>
+            {% for post in posts %}
+                <tr>
+                    <td>{{ post.pk }}</td>
+                    <td class="post_table_title"><a class="post-link" href="{% url 'post:post_detail' pk=post.pk %}">{{ post.title }}</a></td>
+                    <td>{{ post.author }}</td>
+                    <td>{{ post.published_date }}</td>
+                    <td>1</td>
+                    <td>1</td>
+            {% endfor %}
+        </table>
+
+
 
     <ul class="paging">
         <!-- 이전페이지 -->
@@ -47,4 +72,5 @@
         </li>
         {% endif %}
     </ul>
+    </div>
 {% endblock %}

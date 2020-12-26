@@ -15,10 +15,8 @@
     </head>
     <body>
         {% include 'blog/navbar.html' %}
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        <div class="content container">
-                    {% block content %}
-                    {% endblock %}
+         {% block content %}
+         {% endblock %}
         </div>
     </body>
     <script src="{% static 'js/main.js' %}" type="text/javascript" defer></script>

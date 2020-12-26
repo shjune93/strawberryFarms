@@ -1,13 +1,12 @@
 {% extends 'blog/base.html' %}
- 
+
 {% block content %}
     <h1>New post</h1>
+    {{form.media}}
     <form method="POST" class="post-form">
         {% csrf_token %}
-        {{ form.as_p }}
-        {% if user.is_authenticated %}
-        {{user.username}}
-        {% else %}
-        <button type="submit"><i class="far fa-save"></i></button>
+        {{ form.as_p}}
+        <p></p>
+        <button type="submit">발행</button>
     </form>
 {% endblock %}

@@ -9,17 +9,64 @@ body{
     font-family: 'Langar';
     font-size:25px;
 }
-
-a{
-    text-decoration: none;/*밑줄제거*/
-    color:var(--text-color);
-    font-size:30px;
+.main{
+    position: relative;
+    width: 90%;
+    margin-left:5%;
+    margin-right:5%;
+    padding: 120px 0 100px;
 }
 
 p{
     word-break:break-all;
     text-overflow: ellipsis;
 }
+/*post 관련*/
+.post_table{
+    border-collapse:collapse;
+    margin:25px 0;
+    font-size:15px;
+    min-width:400px;
+    width: 100%;
+}
+td{
+    text-align:center;
+}
+td.post_table_title{
+    text-align:left;
+}
+a.post-link{
+    text-decoration:none;
+}
+
+.post{
+    justify-content:center;/*센터로 */
+    display: flex;/*행정렬*/
+}
+.post a{
+    color:#123456;
+    text-decoration: none;/*밑줄제거*/
+}
+
+.post .date{
+    font-size:20px;
+}
+
+.post_detail{
+    margin-left:100px;
+    justify-content:center;/*센터로 */
+}
+
+.fas fa-plus{
+     justify-content:right;/*센터로 */
+    display: flex;/*행정렬*/
+}
+
+
+/**/
+
+
+/*navbar 설정*/
 .navbar{/*최상위부터 꾸며야됨*/
     display: flex;/*한줄에 나란히 들어오도록*/
     justify-content: space-between;/*중간중간에 띄워줌*/
@@ -72,6 +119,13 @@ p{
     color:var(--accent-color);
 }
 
+.navbar a{
+    text-decoration: none;/*밑줄제거*/
+    color:var(--text-color);
+    font-size:30px;
+}
+/*navbar 설정*/
+
 .fa-plus{
     color:#123456;
     float:right;
@@ -88,6 +142,7 @@ p{
     font-size:50px;
     background:white;
 }
+
 
 /*paging*/
 
@@ -114,7 +169,7 @@ p{
 
 
 
-
+/*모바일 화면*/
 @media screen and (max-width:768px){/*화면이작아져서 배치가 깨질때*/
     .navbar{/*작아지면 열로세움*/
         flex-direction:column;

@@ -30,7 +30,6 @@ ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,8 +37,21 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    #블로그
     'blog',
+    #커스텀유저
     'users',
+    #소셜로그인 관련앱
+    'django.contrib.sites',#사이트,url정보 관리 해주는 기능
+    'allauth',#설치한앱
+    'allauth.account',#소셜로그인한 계정관리
+    'allauth.socialaccount',#소셜account 정보관리
+    'allauth.socialaccount.providers.naver',#네이버 소셜로그인
+    'allauth.socialaccount.providers.google',#구글 소셜로그인
+    #텍스트에디터
+    'ckeditor',
+    'ckeditor_uploader',
+
 ]
 
 MIDDLEWARE = [
@@ -123,8 +135,26 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+#사용자 커스텀유저 사용시
 AUTH_USER_MODEL='users.User'
+
+#로그인과정전에 누구한테 맡길지
+AUTHENTICATION_BACKENDS=[
+    'django.contrib.auth.backends.ModelBackend',#기본장고 유저
+    'allauth.account.auth_backends.AuthenticationBackend',#소셜로그인 인증체계
+]
+
+#위에'django.contrib.sites'에 첫번째 인스턴스 사용
+SITE_ID=1
+# 로그인후 이동할 페이지
+LOGIN_REDIRECT_URL = '/'
+
+#Ckeditor 업로드 폴더 설정
+CKEDITOR_UPLOAD_PATH='uploads/'
+MEDIA_URL='media/'
+MEDIA_ROOT='media/'
+
+
 #로그인 설정
 # LOGIN_URL = '/users/login/' # 기본값
 # LOGOUT_URL = '/users/logout/' # 기본값
-# LOGIN_REDIRECT_URL = '/' # 반드시 정의할 것!

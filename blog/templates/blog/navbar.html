@@ -5,7 +5,7 @@
         </div>
         <div class="navbar__menu">
           <li><a href="">Home</a></li>
-          <li><a href="">blog</a></li>
+          <li><a href="{% url 'post:post_list' %}">blog</a></li>
           <li><a href="">git</a></li>
           <li><a href="">QnA</a></li>
           <li><a href="">Farm</a></li>
@@ -13,6 +13,7 @@
 
         <div class="navbar__icons">
             {% if user.is_authenticated %}
+            <li><a href=""><i class="fas fa-user"></i></a></li>
             <li><a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i></a></li>
             {% else %}
             <li><a href="{% url 'users:login' %}"><i class="fas fa-sign-in-alt"></i></a></li>
